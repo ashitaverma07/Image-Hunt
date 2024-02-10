@@ -55,3 +55,16 @@ form button {
     color: #fff;
     font-size: 18px;
 }
+
+#show-more-btn{
+    background: #ffc229;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 10px auto 100px;
+    cursor: pointer;
+    display: none;
+}
+
