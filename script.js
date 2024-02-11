@@ -1,3 +1,4 @@
+const acessKey = "ywBj0IZ66416o03LOKNNBWIWh9u881lCQaD2N6Soybc";
 const searchForm = document.getElementById("search-form");
 const searchBox = document.getElementById("search-box");
 const searchResult = document.getElementById("search-result");
@@ -6,7 +7,17 @@ const showMoreBtn = document.getElementById("show-more-btn");
 let keyword = "";
 let page = 1;
 
-async function searchImage(){
+async function searchImages() {
     keyword = searchBox.ariaValueMax;
-    const url = 'https://api.unsplash.com/search/photos?page=${page}&query=${keyword}';
+    const url = 'https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${acessKey}';
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
 }
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    page = 1;
+    searchImages();
+})
